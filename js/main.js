@@ -21,7 +21,7 @@
     b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);document.getElementById(b.getAttribute('aria-controls')).hidden=!o;b.closest('.faq-item').classList.toggle('open',o)});
   });
   // Contact form: sends via FormSubmit to Gilberto's inbox (temporary until GEIT email is set up).
-  var FORM_ENDPOINT='https://formsubmit.co/ajax/gilbertoibarra027@gmail.com';
+  var FORM_ENDPOINT='https://formsubmit.co/ajax/tito@geitdigital.com';
   var f=document.getElementById('contact-form'),s=f.querySelector('.form-status'),btn=f.querySelector('button[type=submit]');
   f.addEventListener('submit',function(e){
     e.preventDefault();var ok=true;
