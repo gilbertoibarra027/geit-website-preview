@@ -203,3 +203,20 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--crimson)
  .cta-media::after{background:rgba(11,11,12,.78)}
  .card-media{aspect-ratio:4/3}
 }
+/* FAQ accordion */
+.faq{padding-top:40px}
+.faq .intro a{color:var(--white);text-decoration-color:var(--crimson);text-underline-offset:3px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:rgba(42,42,45,.55);border:1px solid var(--line);border-radius:14px;transition:border-color .25s}
+.faq-item:hover,.faq-item.open{border-color:rgba(185,185,191,.32)}
+.faq-item h3{margin:0;font-size:16px;letter-spacing:.05em}
+.faq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;cursor:pointer;font:600 16px/1.35 var(--head);text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
+.faq-q:focus-visible{outline:2px solid var(--silver);outline-offset:-2px;border-radius:14px}
+.faq-icon{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--steel);position:relative;transition:background .25s,border-color .25s,transform .3s var(--ease)}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:2px;background:var(--white);transform:translate(-50%,-50%)}
+.faq-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-q[aria-expanded=true] .faq-icon{background:var(--burgundy);border-color:var(--burgundy);transform:rotate(45deg)}
+.faq-q:hover .faq-icon{border-color:var(--silver)}
+.faq-a{padding:0 22px 20px}
+.faq-a p{margin:0;color:var(--silver);font-size:15px;max-width:60ch}
+.faq .split{align-items:start}
