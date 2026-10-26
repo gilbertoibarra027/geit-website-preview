@@ -36,4 +36,11 @@
       .catch(function(){s.textContent='Something went wrong. Please try again in a moment.'})
       .finally(function(){btn.disabled=false});
   });
+  // One-page site: all in-page links scroll smoothly and keep a clean URL (no #slugs).
+  document.querySelectorAll('a[href="/"], a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){
+    var h=a.getAttribute('href');var el=h==='/'?null:document.querySelector(h);if(h!=='/'&&!el)return;
+    e.preventDefault();var nav=document.querySelector('.nav-open, [data-open="true"]');
+    if(el){el.scrollIntoView({behavior:'smooth'});if(h!=='#main'){el.setAttribute('tabindex','-1');el.focus({preventScroll:true});}}else window.scrollTo({top:0,behavior:'smooth'});
+    history.replaceState(null,'','/');});});
+  if(location.hash){history.replaceState(null,'','/');}
 })();
